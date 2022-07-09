@@ -23,10 +23,10 @@ const Barra = () => {
                             Aplicación Películas
                         </Link>
                         </Typography>
-                        <Link to="/movies">
+                        {/*<Link to="/movies">
                             <Button variant="contained">Películas Link</Button>
                         </Link>
-                        <Button variant="contained" onClick={goToMovies}>Películas</Button>
+                        <Button variant="contained" onClick={goToMovies}>Películas</Button>*/}
                     </Toolbar>
                 </AppBar>
             </Box>

@@ -14,22 +14,11 @@ const CardInfo = (props) => {
     const image = "https://image.tmdb.org/t/p/w220_and_h330_face/" + props.movie.poster_path;
     return (
         <>
-        <Button onClick={() => {navigate(`/movie/${props.movie.id}/${props.movie.title}`)}}>
             <Card>
                 <CardMedia
                     component="img"
                     height="330"
-                    image= {image}
-                    alt="movie image"
-                />
-            </Card>
-        </Button>
-            {/*
-            <Card>
-                <CardMedia
-                    component="img"
-                    height="330"
-                    image= {image}
+                    image={image}
                     alt="movie image"
                 />
                 <CardContent>
@@ -38,9 +27,23 @@ const CardInfo = (props) => {
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size="small" position="end">+ Info</Button>
+                    <Button size="small" position="end" onClick={() => { navigate(`/movie/${props.movie.id}/${props.movie.title}`) }}>
+                        + Info
+                    </Button>
                 </CardActions>
-            </Card>*/}
+            </Card>
+
+            {/*Si sustituimos lo anterior por el siguiente código, no veríamos el título ni +INFO y se haría clic en la imagen:
+            <Button onClick={() => {navigate(`/movie/${props.movie.id}/${props.movie.title}`)}}> 
+                <Card>
+                    CardMedia
+                        component="img"
+                        height="330"
+                        image= {image}
+                        alt="movie image"
+                    />
+                </Card>
+            </Button>*/}
         </>
     );
 }
